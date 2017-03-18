@@ -1,4 +1,5 @@
-body{background-color:#f2f9fd;}
+body{background-color:#f2f9fd;height:100%;}
+html{height:100%}
 .panel{background:#fff;}
 form .form-group:last-child{padding-bottom:0;}
 .passcode{position:absolute;right:0;top:0;height:32px;margin:1px;border-left:solid 1px #ddd;text-align:center;line-height:32px;border-radius:0 4px 4px 0;}
@@ -33,3 +34,10 @@ form .form-group:last-child{padding-bottom:0;}
 .show_content{width:60%;margin:100px auto;}
 .tab{width:80%;}
 .input_error{color:#f00;}
+
+.mask{width:100%;height:100%;background:#000;opacity: 0.6;overflow:hidden;z-index:5;position:absolute;left:0;top:0;display:none;}
+.mask_center{width:60%;height:60%;background:#fff;position:absolute;top:20%;left:20%;z-index:5;border:2px solid #fff;border-radius:20px;text-align:center;display:none;}
+.mask_close{float:right;font-size:20px;margin:20px 20px;}
+.mask_close:hover{color:#f00;}
+.up_show{width:300px;height:300px;margin-top:20px;cursor:pointer;z-index:7;}
+.mt10{margin-top:20px;}

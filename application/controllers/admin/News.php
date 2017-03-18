@@ -52,6 +52,39 @@ class news extends MY_Controller{
 
     }
 
+//上传图片
+    public function do_upload(){
+        $config['upload_path']      = getcwd().'/uploads/titlepic/';
+        $config['allowed_types']    = 'gif|jpg|png|jpeg';
+        $config['max_size']     = 1024000;
+        $config['max_width']        = 1024;
+        $config['max_height']       = 768;
+        $config['file_name']=date('Ymd',time()).'_'.time();
+        $this->load->library('upload', $config);
+
+        if ( ! $this->upload->do_upload('up_pic'))
+        {
+            $data = array('error' => $this->upload->display_errors());
+            echo json_encode($data['error']);
+            die();
+        }
+        else
+        {
+            $data = array('upload_data' => $this->upload->data());
+            echo json_encode($data['upload_data']['file_name']);
+//            print_r($data['upload_data']);
+            die();
+        }
+
+        print_r($data);
+        die();
+        foreach($data['upload_data'] as $k=>$v){
+            $arr[$k]=urlencode($v);
+        }
+        echo urldecode(json_encode($arr['file_name']));
+//        echo json_encode($data['error']);
+        die();
+    }
 
 
 }

@@ -37,9 +37,9 @@ class Login extends MY_Controller{
     //检查用户名和密码
     public function check_all($name,$pwd){
         $this->load->model('Main_model');
-        $arr=array('name'=>$name);
+        $arr=array('username'=>$name);
         $re=$this->Main_model->get_one($arr,'users');
-        if($re && md5($re['salt'].$pwd)==$re['pwd']){
+        if($re && md5($re['salt'].$pwd)==$re['password']){
             return true;
         }else{
             return false;

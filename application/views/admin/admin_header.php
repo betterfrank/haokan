@@ -18,7 +18,7 @@
     <script src="<?=base_url()?>static/js/jquery.js"></script>
     <script src="<?=base_url()?>static/js/pintuer.js"></script>
     <script src="<?=base_url()?>static/js/respond.js"></script>
-    <script src="<?=base_url()?>static/js/admin.js"></script>
+    <script src="<?=base_url()?>static/js/script.js"></script>
     <link type="image/x-icon" href="favicon.ico" rel="shortcut icon" />
     <link href="favicon.ico" rel="bookmark icon" />
 </head>
