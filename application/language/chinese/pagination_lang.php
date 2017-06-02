@@ -1,3 +1,4 @@
+
 <?php
 /**
  * CodeIgniter
@@ -37,10 +38,11 @@
  */
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-$lang['pagination_first_link']	= '��ҳ';
-$lang['pagination_next_link']	= '��һҳ';
-$lang['pagination_prev_link']	= '��һҳ';
-$lang['pagination_last_link']	= 'βҳ';
+$lang['pagination_first_link']	= '首页';
+$lang['pagination_next_link']	= '下一页';
+$lang['pagination_prev_link']	= '上一页';
+$lang['pagination_last_link']	= '尾页';
 
 /* End of file pagination_lang.php */
 /* Location: ./system/language/english/pagination_lang.php */
+

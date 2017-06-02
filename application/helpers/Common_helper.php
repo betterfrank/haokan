@@ -4,6 +4,7 @@
  * Author: kaixuan
  * Time: 2015/5/4 14:27
  */
+//设置可调节的url
 function myurl($some,$state=1){
     if($state==1){
         return base_url($some);
@@ -24,7 +25,7 @@ function show($news,$url){
     $CI =& get_instance();
     $data['news']=$news;
     $data['url']=$url;
-    $CI->load->view('show',$data);
+    $CI->load->view('admin/show',$data);
 }
 
 //显示正确或者错误

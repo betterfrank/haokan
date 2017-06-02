@@ -20,7 +20,7 @@
     <script src="<?=base_url()?>static/js/respond.js"></script>
     <script src="<?=base_url()?>static/js/script.js"></script>
     <link type="image/x-icon" href="favicon.ico" rel="shortcut icon" />
-    <link href="favicon.ico" rel="bookmark icon" />
+    <link href="/favicon.ico" rel="bookmark icon" />
 </head>
 
 <body>
@@ -42,7 +42,7 @@
                     <ul><li><a href="#">全局设置</a></li><li class="active"><a href="#">系统设置</a></li><li><a href="#">会员设置</a></li><li><a href="#">积分设置</a></li></ul>
                 </li>
                 <li class="<?=$position=='news'?'active':'';?>"><a href="<?=myurl('admin/news')?>" class="icon-file-text"> 新闻</a>
-                    <ul><li><a href="<?=myurl('admin/news/add');?>">添加新闻</a></li><li ><a href="#">新闻管理</a></li><li><a href="#">分类设置</a></li><li><a href="#">链接管理</a></li></ul>
+                    <ul><li><a href="<?=myurl('admin/news/add');?>">添加新闻</a></li><li ><a href="<?=myurl('admin/news/')?>">新闻管理</a></li><li><a href="#">分类设置</a></li><li><a href="#">链接管理</a></li></ul>
                 </li>
                 <li><a href="#" class="icon-shopping-cart"> 订单</a></li>
                 <li><a href="#" class="icon-user"> 会员</a></li>

@@ -24,6 +24,7 @@
  * @property apply_model      $apply_model
  * @property other_model      $other_model
  * @property hd_model         $hd_model
+ * @property Main_model         $Main_model
  *
  */
 class my_models

@@ -35,9 +35,13 @@ form .form-group:last-child{padding-bottom:0;}
 .tab{width:80%;}
 .input_error{color:#f00;}
 
-.mask{width:100%;height:100%;background:#000;opacity: 0.6;overflow:hidden;z-index:5;position:absolute;left:0;top:0;display:none;}
+.mask,#mydialog{width:100%;height:100%;background:#000;opacity: 0.6;overflow:hidden;z-index:5;position:absolute;left:0;top:0;display:none;}
 .mask_center{width:60%;height:60%;background:#fff;position:absolute;top:20%;left:20%;z-index:5;border:2px solid #fff;border-radius:20px;text-align:center;display:none;}
 .mask_close{float:right;font-size:20px;margin:20px 20px;}
 .mask_close:hover{color:#f00;}
 .up_show{width:300px;height:300px;margin-top:20px;cursor:pointer;z-index:7;}
 .mt10{margin-top:20px;}
+.up_img{width:300px;height:300px;margin-top:20px;}
+.border-radius{border-radius:18px 12px 0 0!important;}
+.dialog-p{color:#f00;font-size:22px;margin-bottom:10px;}
+.search_title{float:right;}

@@ -12,6 +12,8 @@ class Login extends MY_Controller{
     }
 
     public function index(){
+
+        $ip=$this->input->ip_address();
         if(!$this->session->userdata('username')){
             $this->load->view('admin/login');
         }else{
@@ -27,7 +29,7 @@ class Login extends MY_Controller{
         $pwd=$this->input->post('password');
         $re=$this->check_all($name,$pwd);
         if($re){
-            $this->session->set_userdata(array('username'=>$name));
+            $this->session->set_userdata(array('username'=>$name,'truename'=>$re['truename']));
             header('location:'.myurl('admin/'));
         }else{
             show('用户名或者密码错误','/admin/');
@@ -40,7 +42,7 @@ class Login extends MY_Controller{
         $arr=array('username'=>$name);
         $re=$this->Main_model->get_one($arr,'users');
         if($re && md5($re['salt'].$pwd)==$re['password']){
-            return true;
+            return $re;
         }else{
             return false;
         }

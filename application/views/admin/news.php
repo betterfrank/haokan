@@ -16,15 +16,15 @@ include('admin_header.php');
 </div>
 <div class="admin">
 <div class="tab">
-    <strong style="display:block;margin-bottom:5px;"><?=$position_zih?></strong>
+    <strong style="display:block;margin-bottom:5px;"><?=$position_zih?>新闻</strong>
     <div class="tab-body">
         <br />
         <div class="tab-panel active" id="tab-set">
-            <form method="post" class="form-x" action="<?=myurl('admin/news/add')?>">
+            <form method="post" class="form-x" action="<?=myurl('admin/news/'.$action)?>">
                 <div class="form-group">
                     <div class="label"><label for="title">新闻标题</label></div>
                     <div class="field">
-                        <input type="text" class="input" id="title" name="title" size="50" placeholder="新闻标题" data-validate="" />
+                        <input type="text" class="input" id="title" name="title" size="50" placeholder="新闻标题" data-validate="required:请填写新闻的标题" value="<?=$re['title']?$re['title']:set_value('title')?>"/>
 <!--                        <input type="text" class="input" id="title" name="title" size="50" placeholder="新闻标题" data-validate="required:请填写新闻的标题" />-->
                         <?=form_error('title','<div class="input_error">','</div>')?>
                     </div>
@@ -32,13 +32,14 @@ include('admin_header.php');
                 <div class="form-group">
                     <div class="label"><label for="classid">分类</label></div>
                     <div class="field">
-                        <select class="input" id="classid" name="classid" data-validate="required:请选择新闻的类型" >
+                        <select class="input" id="classid" name="classid" data-validate="" >
+<!--                            <select class="input" id="classid" name="classid" data-validate="required:请选择新闻的类型" >-->
                             <option value="">请选择分类</option>
-                            <option value="1" <?=set_value('classid')==1?'selected':''?>>起步</option>
-                            <option value="2" <?=set_value('classid')==2?'selected':''?>>CSS</option>
-                            <option value="3" <?=set_value('classid')==3?'selected':''?>>jq</option>
-                            <option value="4" <?=set_value('classid')==4?'selected':''?>>php</option>
-                            <option value="5" <?=set_value('classid')==5?'selected':''?>>数组</option>
+                            <option value="1" <?=$re['classid']==1?'selected':''?> <?=set_value('classid')==1?'selected':''?>>起步</option>
+                            <option value="2" <?=$re['classid']==2?'selected':''?> <?=set_value('classid')==2?'selected':''?>>CSS</option>
+                            <option value="3" <?=$re['classid']==3?'selected':''?> <?=set_value('classid')==3?'selected':''?>>jq</option>
+                            <option value="4" <?=$re['classid']==4?'selected':''?> <?=set_value('classid')==4?'selected':''?>>php</option>
+                            <option value="5" <?=$re['classid']==5?'selected':''?> <?=set_value('classid')==5?'selected':''?>>数组</option>
                         </select>
                     </div>
                 </div>
@@ -46,8 +47,8 @@ include('admin_header.php');
                     <div class="label"><label>是否审核</label></div>
                     <div class="field">
                         <div class="button-group button-group-small radio border-main">
-                            <label class="button <?=set_value('status')==1?'active':''?>"><input name="status" value="1"  type="radio"><span class="icon icon-check"></span> 是</label>
-                            <label class="button <?=set_value('status')==0?'active':''?>"><input name="status" value="0" <?=set_value('status')==0?'checked':''?> type="radio"><span class="icon icon-times"></span> 否</label>
+                            <label class="button <?=$re['status']==1?'active':''?><?=set_value('status')==1?'active':''?>"><input name="status" value="1"  type="radio"><span class="icon icon-check"></span> 是</label>
+                            <label class="button <?=$re['status']==0?'active':''?><?=set_value('status')===0?'active':''?>"><input name="status" value="0" <?=set_value('status')==0?'checked':''?> type="radio"><span class="icon icon-times"></span> 否</label>
                         </div>
                     </div>
                 </div>
@@ -64,7 +65,7 @@ include('admin_header.php');
                 <div class="form-group">
                     <div class="label"><label for="title_pic">标题图片</label></div>
                     <div class="input-inline clearfix">
-                        <input type="text" class="input title_pic "  name="title_pic" class="title_pic" size="50"/>
+                        <input type="text" class="input title_pic "  name="title_pic" class="title_pic" size="50" value="<?=set_value('title_pic')?>"/>
                         <a href="javascript:;" type="input" name="up_input" class="up_input button bg-green" id="" >上传图片</a>
                     </div>
                 </div>
@@ -77,7 +78,7 @@ include('admin_header.php');
                 <div class="form-group">
                     <div class="label"><label for="author">作者</label></div>
                     <div class="field">
-                        <input type="text" class="input" id="author" name="author" size="50" value="admin" readonly/>
+                        <input type="text" class="input" id="author" name="author" size="50" value="<?=$this->session->userdata('truename')?>" readonly/>
                     </div>
                 </div>
                 <div class="form-group">
@@ -85,10 +86,11 @@ include('admin_header.php');
                     <div class="field">
                         <script id="content" name="content" type="text/plain">
                         <?=html_entity_decode(set_value('content'))?>
+                        <?=$re['content']?>
                         </script>
                     </div>
                 </div>
-                <div class="form-button"><button class="button bg-main" type="submit">添加</button></div>
+                <div class="form-button"><button class="button bg-main" type="submit"><?=$position_zih?></button></div>
             </form>
         </div>
     </div>
